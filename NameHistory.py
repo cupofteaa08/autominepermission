@@ -2,6 +2,8 @@ import requests, json
 from colorama import Fore, init
 import os
 from os import system
+
+
 init()
 def open_win():
     system("mode 65, 30")
@@ -16,7 +18,7 @@ def main(name):
 		print(f"[{Fore.GREEN}*{Fore.LIGHTWHITE_EX}] Pseudo: " + data["username"])
 		print(f"[{Fore.GREEN}*{Fore.LIGHTWHITE_EX}] UUID: " + data["uuid"])
 		if data["created_at"] == None:
-			print(f"[{Fore.RED}-{Fore.LIGHTWHITE_EX}] Created the: Not found")
+			print(f"[{Fore.RED}-{Fore.LIGHTWHITE_EX}] Pseudo pas trouvé")
 		else:
 			print(f"[{Fore.GREEN}*{Fore.LIGHTWHITE_EX}] Created the: " + data["created_at"])
 			print(f"\n[{Fore.GREEN}+{Fore.LIGHTWHITE_EX}] Name History: \n")
@@ -29,11 +31,10 @@ def main(name):
 				chang = data["created_at"]
 				print(f'{Fore.GREEN}   =>  [{pseu}] {Fore.LIGHTWHITE_EX}{username["username"]} (Frist Name)')
 	else:
-		print(f"[{Fore.RED}-{Fore.LIGHTWHITE_EX}] This pseudo does not exist")
+		print(f"[{Fore.RED}-{Fore.LIGHTWHITE_EX}] ce pseudo n'existe pas")
 open_win()
 while True:
 	os.system('cls')
 	minecraft_name = input(f"[{Fore.GREEN}>{Fore.LIGHTWHITE_EX}] Pseudo Minecraft : ")
 	main(minecraft_name)
-	input('\nPress [Enter] For Retry')
-	sys.exit()
+	input('\nAppuyez sur [ENTREE] pour re-itérer')
